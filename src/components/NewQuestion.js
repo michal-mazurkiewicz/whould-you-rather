@@ -8,7 +8,7 @@ class NewQuestion extends Component {
   state = {
     optionOneText: "",
     optionTwoText: "",
-    toHome: false
+    toHome: false,
   };
 
   handleChangeOptionOne = (e) => {
@@ -30,16 +30,14 @@ class NewQuestion extends Component {
     e.preventDefault();
 
     const { optionOneText, optionTwoText } = this.state;
-    const {dispatch} = this.props
+    const { dispatch } = this.props;
     // Todo add new question to store
-    dispatch(handleAddQuestion(optionOneText, optionTwoText))
-
-    console.log("Would you rather: ", optionOneText, optionTwoText);
+    dispatch(handleAddQuestion(optionOneText, optionTwoText));
 
     this.setState(() => ({
       optionOneText: "",
       optionTwoText: "",
-      toHome: true
+      toHome: true,
     }));
   };
 
@@ -48,8 +46,8 @@ class NewQuestion extends Component {
 
     //TODO: Redirect to home view if submited
 
-    if(toHome === true){
-      return <Redirect to='/'/>
+    if (toHome === true) {
+      return <Redirect to="/" />;
     }
 
     const answerOneLeft = 280 - optionOneText.length;
@@ -81,19 +79,18 @@ class NewQuestion extends Component {
             <div className="question-lenght">{answerTwoLeft}</div>
           )}
           <div>
-          <button
-            className="btn"
-            type="submit"
-            disabled={optionOneText === "" || optionTwoText === ""}
-          >
-            Submit
-          </button>
+            <button
+              className="btn"
+              type="submit"
+              disabled={optionOneText === "" || optionTwoText === ""}
+            >
+              Submit
+            </button>
           </div>
-
         </form>
       </div>
     );
   }
 }
 
-export default connect()(NewQuestion)
+export default connect()(NewQuestion);

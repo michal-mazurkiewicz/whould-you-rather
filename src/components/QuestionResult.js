@@ -60,7 +60,7 @@ class QuestionResult extends Component {
 }
 
 function mapStateToProps({ authedUser, users, questions }, props) {
-  const { id } = props.match.params;
+  const { id } = props;
   const question = questions[id];
   if (question === undefined) {
     return question;

@@ -32,7 +32,7 @@ class Question extends Component {
           <div>
             <div>
               {hasAnswered === true ? (
-                <Link className="btn" to={`/results/${id}`}>
+                <Link className="btn" to={`/question/${id}`}>
                   View result
                 </Link>
               ) : (
